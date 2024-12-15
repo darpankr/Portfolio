@@ -9,3 +9,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 500); // Fade-in starts after 500ms
   });
   
+

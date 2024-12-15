@@ -1,50 +1,56 @@
-/* General Reset */
-* {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f9f9f9;
-    overflow: hidden;
-  }
-  
-  .container {
-    position: relative;
+    flex-direction: column;
+}
+
+.container {
     text-align: center;
-    width: 60%;
-    max-width: 600px; /* Ensures it doesn't stretch too large on wide screens */
+    background-color: white;
     padding: 50px;
-    border: 2px solid black;
-    border-radius: 50px; /* Curved container */
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .line1 {
-    font-size: 28px;
-    font-weight: normal;
-    color: black;
-    margin-bottom: 20px;
-  }
-  
-  .line2 {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between the two divs */
+}
+
+.line1 {
     font-size: 24px;
-    font-weight: normal;
-    color: black;
-  }
-  
-  .highlight {
+    color: #000;
+}
+
+.line2 {
+    font-size: 20px;
+    color: #000;
+}
+
+.highlight {
     color: green;
     font-style: italic;
+}
+
+.div {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+#visitCount {
+    font-size: 22px;
     font-weight: bold;
-  }
+}
+
+/* Flexbox for column layout */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
   
   /* Media Queries for Responsiveness */
   
