@@ -1,0 +1,5 @@
+.center-div {
+    width: 200px; /* Set a width */
+    margin: 0 auto; /* Horizontally centers the div */
+    text-align: center; /* Centers the text inside the div */
+  }
