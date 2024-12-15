@@ -18,9 +18,10 @@
   .container {
     position: relative;
     text-align: center;
-    width: 50%;
+    width: 60%;
+    max-width: 600px; /* Ensures it doesn't stretch too large on wide screens */
     padding: 50px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 50px; /* Curved container */
     background: #ffffff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -43,5 +44,35 @@
     color: green;
     font-style: italic;
     font-weight: bold;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For tablets and smaller devices */
+  @media (max-width: 768px) {
+    .container {
+      width: 80%; /* Take up more width on smaller screens */
+      padding: 30px; /* Reduce padding */
+    }
+    .line1 {
+      font-size: 20px; /* Reduce font size */
+    }
+    .line2 {
+      font-size: 18px; /* Adjust font size for smaller screens */
+    }
+  }
+  
+  /* For mobile devices */
+  @media (max-width: 480px) {
+    .container {
+      width: 90%; /* Almost full width on mobile */
+      padding: 20px; /* Further reduce padding */
+    }
+    .line1 {
+      font-size: 18px; /* Smaller font for mobile */
+    }
+    .line2 {
+      font-size: 16px;
+    }
   }
   
