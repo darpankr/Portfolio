@@ -1,33 +1,15 @@
 "use client"
 
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
+import { useContactForm } from "@/components/logic/UseContactForm"
 
 export function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", message: "" })
-  }
-
-  const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
-  }
+  const { formData, handleChange, handleSubmit } = useContactForm()
 
   return (
     <section id="contact" className="py-20">
@@ -67,7 +49,7 @@ export function Contact() {
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <Input placeholder="Your Name" name="name" value={formData.name} onChange={handleChange} required />
+                    <Input placeholder="Your Name" name="name" value={formData.name} onChange={handleChange} required className="pl-2"/>
                   </div>
                   <div>
                     <Input
@@ -77,6 +59,7 @@ export function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
+                      className="pl-2"
                     />
                   </div>
                   <div>
@@ -87,6 +70,7 @@ export function Contact() {
                       onChange={handleChange}
                       rows={5}
                       required
+                      className="pl-2"
                     />
                   </div>
                   <Button type="submit" className="w-full">
