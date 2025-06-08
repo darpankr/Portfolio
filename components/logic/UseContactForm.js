@@ -31,7 +31,7 @@ export function useContactForm() {
             }
         } catch (error) {
             console.error("Error sending message:", error);
-            alert("An error occurred while sending your message. Please try again later.");
+            alert("An error occurred while sending your message. Please try again.");
         }
     }
 
