@@ -6,10 +6,12 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { useContactForm } from "@/components/logic/UseContactForm"
+import { UseConfig } from "@/components/logic/UseConfig"
 
 export function Contact() {
 
   const { formData, handleChange, handleSubmit } = useContactForm()
+  const { contact } = UseConfig()
 
   return (
     <section id="contact" className="py-20">
@@ -21,22 +23,21 @@ export function Contact() {
             <div>
               <h3 className="text-2xl font-semibold mb-6">Let's work together</h3>
               <p className="text-muted-foreground mb-8">
-                I'm always interested in hearing about new projects and opportunities. Whether you're a company looking
-                to hire, or you're a fellow developer wanting to collaborate, I'd love to hear from you.
+                {contact.description || "Feel free to reach out for collaborations, inquiries, or just a friendly chat. I'm always open to new opportunities and connections!"}
               </p>
 
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>darpankumarsing92@gmail.com</span>
+                  <span>{contact.email}</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>+91 7908518100</span>
+                  <span>{contact.phone}</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>Bangalore, India</span>
+                  <span>{contact.location}</span>
                 </div>
               </div>
             </div>
